@@ -1,9 +1,13 @@
 {
   "name": "typescript-blockchain",
   "version": "1.0.0",
-  "description": "Learning Typescript by making a BlockChain",
+  "description": "Learning Typescript by making a Blockchain",
   "main": "index.js",
   "repository": "https://github.com/canadaprogrammer/typescript-blockchain",
   "author": "Jin Park <jinpark1504@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "scripts": {
+    "start": "node index.js",
+    "prestart": "tsc"
+  }
 }
