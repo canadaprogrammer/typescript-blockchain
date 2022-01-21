@@ -65,9 +65,10 @@
     {
       "compilerOptions": {
         ...,
-        "outDir": "dist"        // Compiled ones will be inside dist.
+        "outDir": "dist"        // Compiled ones will be inside dist.,
+        "rootDir": "src"        // All typescript will be inside src.
       },
-      "include": ["src/**/*"],  // All typescript will be inside src.
+      // "include": ["src/**/*"], // All typescript will be inside src.
       ...
     }
     ```
@@ -155,6 +156,33 @@
   };
 
   console.log(sayHi(person));
+
+  export {};
+  ```
+
+## Class
+
+- ```ts
+  class Human {
+    public name: string;
+    //private age: number;
+    public age: number;
+    public gender: string;
+    constructor(name: string, age: number, gender: string) {
+      this.name = name;
+      this.age = age;
+      this.gender = gender;
+    }
+  }
+
+  const jin = new Human('Jin', 20, 'Male');
+
+  // Error: Property 'age' is private and only accessible within class 'human'.
+  const sayHi = ({ name, age, gender }: Human): string => {
+    return `Hello ${name}, you are ${age}, ${gender}.`;
+  };
+
+  console.log(sayHi(jin));
 
   export {};
   ```
